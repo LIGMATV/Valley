@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valley.css</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="valley.css" />
+</head>
+
+<body>
+
+    <main>
+
+        <nav id="navigation-rail" class="rail">
+            <button data-ui="#navigation-rail" class="icon">
+                <i class='bx bx-menu'></i>
+            </button>
+            <div class="margin-top margin-bottom"></div>
+            <button class="active">
+                <i class='bx bx-home-alt'></i>
+                <span>Home</span>
+            </button>
+            <button>
+                <i class='bx bx-search'></i>
+                <span>Search</span>
+            </button>
+            <button>
+                <i class='bx bx-star'></i>
+                <span>Like</span>
+            </button>
+            <button class="active">
+                <i class='bx bx-chat'></i>
+                <span>Comment</span>
+            </button>
+        </nav>
+
+        <article class="main">
+            <header class="main-header">
+                <div class="title">Valley.css</div>
+                <p class="description">The simplest way to make web page become native.</p>
+            </header>
+
+            <section>
+                <h2>Why using Valley.css?</h2>
+                <ul>
+                    <li>Easy</li>
+                    <li>Free</li>
+                    <li>No more headache</li>
+                    <li>Easy</li>
+                    <li>Free</li>
+                    <li>Easy</li>
+                    <li>Free</li>
+                </ul>
+            </section>
+
+            <section>
+
+                <h2>Accordion</h2>
+
+                <details>
+                    <summary class="button">Item 1</summary>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </details>
+            </section>
+
+            <section>
+                <h2>Buttons</h2>
+
+                <h3>Text Buttons</h3>
+                <button>Standard button</button>
+                <button disabled>Standard button</button>
+                <button class="accent">Accent style button</button>
+                <button class="plain">Plain button</button>
+                <div class="margin-bottom"></div>
+
+                <h3>Square Buttons</h3>
+                <button class="square"><i class='bx bx-basketball'></i></button>
+                <button class="square circle"><i class='bx bx-basketball'></i></button>
+                <div class="margin-bottom"></div>
+
+                <h3>Full-width Buttons</h3>
+                <div class="full-width">
+                    <button>This button gonna fill up the whole div width</button>
+                    <div class="margin-bottom"></div>
+                    <button>This should meant for the short width divs</button>
+                </div>
+                <div class="margin-bottom"></div>
+
+                <h3>Group buttons</h3>
+                <nav class="grouped">
+                    <button>Type one</button>
+                    <button>Type two</button>
+                </nav>
+                <div class="margin-bottom"></div>
+                <nav class="grouped">
+                    <button class="square"><i class='bx bx-comment-dots'></i></button>
+                    <button class="square"><i class='bx bx-video'></i></button>
+                    <button class="square"><i class='bx bx-phone-call'></i></button>
+                </nav>
+
+            </section>
+
+            <section>
+
+                <h2>Cards</h2>
+
+                <article>
+                    <h3>Title</h3>
+                    <p>Some text here</p>
+                </article>
+                <div class="margin-bottom"></div>
+                <article>
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida, eros in rutrum
+                        eleifend, sem est bibendum turpis, ac maximus tortor massa at purus.</p>
+                </article>
+            </section>
+
+            <section>
+
+                <h2>Dialog</h2>
+
+                <button onclick="document.getElementById('dialog-demo').showModal()">Open <i class='bx bx-window-open'></i></button>
+                <dialog id="dialog-demo">
+                    <h3>Save your work?</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <form method="dialog">
+                        <button class="accent"><i class='bx bx-check'></i> Save</button>
+                        <button><i class='bx bx-x'></i> Dont save</button>
+                    </form>
+                </dialog>
+
+            </section>
+
+            <section>
+                <h2>Dropdown</h2>
+                <div class="dropdown">
+                    <button class="dropbtn" data-ui="#dropdown-1">Default <i class='bx bx-chevron-down'></i> </button>
+                    <menu id="dropdown-1">
+                        <a href="#">Item 1</a>
+                        <a href="#">Item 2</a>
+                        <a href="#">Item 3</a>
+                    </menu>
+                </div>
+                <nav class="grouped">
+                    <button>Type one</button>
+                    <div class="dropdown">
+                        <button class="last-child" data-ui="#dropdown-2"><i class='bx bx-chevron-down'></i></button>
+                        <menu id="dropdown-2">
+                            <a href="#">Item 1</a>
+                            <a href="#">Item 2</a>
+                            <a href="#">Item 3</a>
+                            <div class="dropdown">
+                                <button data-ui="#dropdown-3" class="plain">More items <i class='bx bx-chevron-right'></i></button>
+                                <menu id="dropdown-3">
+                                    <a href="#">Item 4</a>
+                                    <a href="#">Item 5</a>
+                                    <a href="#">Item 6</a>
+                                    <div class="dropdown">
+                                        <button data-ui="#dropdown-4" class="plain">More items <i class='bx bx-chevron-right'></i></button>
+                                        <menu id="dropdown-4">
+                                            <a href="#">Item 7</a>
+                                            <a href="#">Item 8</a>
+                                            <a href="#">Item 9</a>
+                                        </menu>
+                                    </div>
+                                </menu>
+                            </div>
+                            <a href="#" disabled>Disabled</a>
+                        </menu>
+                    </div>
+                </nav>
+
+            </section>
+
+            <section>
+
+                <h2>Field</h2>
+
+                <input type="text">
+
+            </section>
+
+            <section>
+
+                <h2>Icons</h2>
+                <p>Valley.css has built in support to Boxicons. It have multiple built in effortless customization classes.</p>
+                <h3>Webfont icon</h3>
+                <i class='bx bx-home-alt bx-xs'></i>
+                <i class='bx bx-home-alt bx-sm'></i>
+                <i class='bx bx-home-alt bx-md'></i>
+                <i class='bx bx-home-alt bx-lg'></i>
+                <div class="margin-bottom"></div>
+                <i class='bx bxs-like bx-rotate-90 bx-md'></i>
+                <i class='bx bxs-like bx-rotate-180 bx-md'></i>
+                <i class='bx bxs-like bx-rotate-270 bx-md'></i>
+                <i class='bx bxs-like bx-flip-horizontal bx-md'></i>
+                <i class='bx bxs-like bx-flip-vertical bx-md'></i>
+                <div class="margin-bottom"></div>
+                <i class="bx bx-loader bx-spin bx-md"></i>
+                <i class="bx bxs-bell bx-tada bx-md"></i>
+                <i class="bx bxs-error bx-flashing bx-md"></i>
+                <i class="bx bx-radio-circle bx-burst bx-md"></i>
+                <i class="bx bx-fade-left bxs-left-arrow-circle bx-md"></i>
+                <i class="bx bx-fade-right bxs-right-arrow-circle bx-md"></i>
+                <i class="bx bx-fade-up bxs-up-arrow-circle bx-md"></i>
+                <i class="bx bx-fade-down bxs-down-arrow-circle bx-md"></i>
+                <div class="margin-bottom"></div>
+                <i class="bx bx-loader bx-spin-hover bx-md"></i>
+                <i class="bx bxs-bell bx-tada-hover bx-md"></i>
+                <i class="bx bxs-error bx-flashing-hover bx-md"></i>
+                <i class="bx bx-radio-circle bx-burst-hover bx-md"></i>
+                <i class="bx bx-fade-left-hover bxs-left-arrow-circle bx-md"></i>
+                <i class="bx bx-fade-right-hover bxs-right-arrow-circle bx-md"></i>
+                <i class="bx bx-fade-up-hover bxs-up-arrow-circle bx-md"></i>
+                <i class="bx bx-fade-down-hover bxs-down-arrow-circle bx-md"></i>
+
+                </section>
+
+
+        </article>
+
+
+    </main>
+
+    <script>
+        const buttons = document.querySelectorAll('button[data-ui]');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                const targetSelector = button.getAttribute('data-ui');
+                const targetElement = document.querySelector(targetSelector);
+
+                if (targetElement) {
+                    if (targetElement.hasAttribute('open')) {
+                        targetElement.removeAttribute('open');
+                    } else {
+                        targetElement.setAttribute('open', '');
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
