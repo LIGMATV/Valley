@@ -5,6 +5,14 @@ body {
     box-sizing: border-box;
 }
 
+@media (pointer:none), (pointer:coarse), (any-pointer: coarse) {
+    *,
+    *::before,
+    *::after {
+        cursor: default;
+    }
+}
+
 :root {
     --shadow2: rgba(0, 0, 0, 0.12) 0px 0px 2px, rgba(0, 0, 0, 0.14) 0px 1px 2px;
     --shadow4: rgba(0, 0, 0, 0.12) 0px 0px 2px, rgba(0, 0, 0, 0.14) 0px 2px 4px;
@@ -12,7 +20,7 @@ body {
     --shadow16: rgba(0, 0, 0, 0.12) 0px 0px 2px, rgba(0, 0, 0, 0.14) 0px 8px 16px;
     --shadow28: rgba(0, 0, 0, 0.12) 0px 0px 8px, rgba(0, 0, 0, 0.14) 0px 14px 28px;
     --shadow64: rgba(0, 0, 0, 0.12) 0px 0px 8px, rgba(0, 0, 0, 0.14) 0px 32px 64px;
-    --accent: #07bbbc;
+    --accent: #1BA1E2;
 }
 
 *,
@@ -26,7 +34,7 @@ body {
 html {
     margin: 0;
     padding: 0;
-    line-height: 1.45;
+    line-height: 1.75;
 }
 
 main {
@@ -52,20 +60,20 @@ dialog {
     background-color: #ffffff;
     border: 1px solid #e8e8e8;
     border-bottom: 1px solid #bababa;
-    border-radius: .4rem;
+    border-radius: .45rem;
     padding: .2rem 1.2rem;
     box-shadow: var(--shadow2);
 }
 
-article > :not(section) {
+article> :not(section) {
     padding: .8rem 0;
 }
 
-article > :not(section):first-child {
+article> :not(section):first-child {
     padding-bottom: 0;
 }
 
-section > :is(h1, h2, h3):first-child {
+section> :is(h1, h2, h3):first-child {
     padding-top: 0;
 }
 
@@ -114,7 +122,6 @@ button {
 }
 
 :is(button, input, optgroup, select, textarea) {
-    line-height: inherit;
     border: 1px solid currentColor;
 }
 
@@ -125,6 +132,7 @@ button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    text-align: left;
 }
 
 input {
@@ -159,6 +167,7 @@ select {
 textarea {
     overflow: auto;
     vertical-align: top;
+    resize: vertical;
 }
 
 [type=search] {
@@ -262,6 +271,7 @@ dialog:not([open]) {
 body:has(dialog[open]) {
     overflow: hidden;
 }
+
 dialog form {
     padding: 1.4rem 1.6rem;
     margin: 1.8rem 0 0;
@@ -329,7 +339,7 @@ template {
     border-color: var(--color) transparent transparent transparent;
 }
 
-article > header.main-header {
+article>header.main-header {
     text-align: center;
     padding: 12rem 0;
 }
@@ -357,7 +367,7 @@ header .description {
 }
 
 .rail[open] {
-    width: 12em;
+    width: 14.5em;
     border-radius: 0 .5rem .5rem 0;
     background-color: #f1f1f1dc;
     backdrop-filter: blur(.6rem);
@@ -385,11 +395,11 @@ header .description {
     background: transparent;
     border: none;
     font-size: 1.2rem;
-    height: 2.4rem;
+    height: 2.3rem;
     width: 2.6rem;
     border-radius: .3rem;
     padding: 0;
-    margin: .15rem 0;
+    margin: .2rem 0;
     text-align: left;
     transition: width .25s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
@@ -398,18 +408,11 @@ header .description {
     border: none;
 }
 
-.rail button>i {
-    display: inline-block;
-    text-align: center;
-    height: 2.4rem;
-    width: 2.6rem;
-    padding: .35rem 0;
-    font-style: normal;
-}
 
-.rail button i.bx {
-    margin-bottom: -1.1rem;
-    font-size: 1.3rem;
+.rail button iconify-icon {
+    display: inline-block;
+    margin: .5rem 0 0 .55rem;
+    font-size: 1.4rem;
 }
 
 .rail:not([open]) button>span {
@@ -420,17 +423,17 @@ header .description {
     display: inline-block;
     position: absolute;
     font-size: .9rem;
-    padding: .4rem 0;
+    padding: .45rem 0 .45rem .6rem;
 }
 
 .rail button.active::before {
     position: absolute;
     left: 4px;
-    margin-top: .5rem;
+    margin-top: .65rem;
     width: 2px;
     height: 1rem;
     content: "";
-    background-color: #000000;
+    background-color: var(--accent);
     border-radius: 2px;
 }
 
@@ -466,17 +469,18 @@ ul li {
 }
 
 button:not(.plain, .rail button),
-.button {
+.button,
+:is(input[type=text], textarea) {
     display: inline-block;
     border-radius: .3rem;
-    padding: .4rem .9rem;
+    padding: .25rem .8rem;
     transition: all 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
     outline: none;
-    cursor: pointer;
 }
 
 button:not(.accent, .plain, .rail button),
-.button {
+.button,
+:is(input[type=text], textarea) {
     background-color: #ffffff;
     border: 1px solid #e8e8e8;
     border-bottom: 1px solid #d0d0d0;
@@ -484,7 +488,8 @@ button:not(.accent, .plain, .rail button),
 }
 
 button:not(.accent, .plain, .rail button):hover,
-.button:hover {
+.button:hover,
+:is(input[type=text], textarea):not(:focus):hover {
     background-color: #f6f6f6;
 }
 
@@ -509,8 +514,15 @@ button:not(.accent, .plain, .rail button):active,
     border: 1px solid transparent;
 }
 
-button>i {
+:where(button, .button) iconify-icon {
     font-size: 1.2rem;
+    margin-top: -.5em;
+    margin-bottom: -.15em;
+}
+
+iconify-icon.right {
+    float: right;
+    margin-top: .05em;
 }
 
 button.square {
@@ -518,37 +530,47 @@ button.square {
     height: 3.9rem;
 }
 
-button.square>i {
-    font-size: 2rem;
+button.square iconify-icon {
+    font-size: 2.5rem;
+    margin: .25rem -.25rem;
 }
 
-.circle {
-    border-radius: 50%;
+button.circle {
+    border-radius: 50% !important;
 }
 
-details > summary {
+:is(input[type=text], textarea) {
+    border-bottom: 1px solid #000;
+    transition: none;
+    font: inherit;
+    width: 100%;
+    min-height: 2.4rem;
+    overflow-y: hidden;
+}
+
+:is(input[type=text], textarea):focus {
+    border-bottom: 1px solid var(--accent);
+    box-shadow: var(--accent) 0px -1px 0px inset;
+}
+
+textarea, details>summary:not(.plain) {
+    display: block;
+    max-width: 100%;
+}
+
+details>summary {
     list-style: none;
-  }
-  details > summary::-webkit-details-marker {
-    display: none;
-  }
-
-details summary {
+    cursor: pointer;
     margin: 0 0 1rem 0;
 }
 
-input[type=text] {
-    padding: .35rem .8rem;
-    margin: 8px 0;
-    font: inherit;
-    border: 1px solid #e8e8e8;
-    border-bottom: 1px solid #d0d0d0;
-    outline: none;
-    border-radius: .2rem;
+details>summary::-webkit-details-marker {
+    display: none;
 }
 
-input[type=text]:focus {
-    box-shadow: var(--shadow2);
+input[type=text] {
+    font: inherit;
+    outline: none;
 }
 
 :is(.margin-top, .margin-bottom, .margin-left, .margin-right) {
@@ -628,7 +650,7 @@ menu {
     border: 1px solid #e8e8e8;
 }
 
-menu > * {
+menu>* {
     display: block;
     color: black;
     padding: .25rem .8rem;
@@ -638,7 +660,7 @@ menu > * {
     border: none;
 }
 
-menu > *:hover {
+menu>*:hover {
     background-color: #f1f1f1
 }
 
@@ -647,15 +669,84 @@ menu .dropdown {
     padding: 0;
 }
 
-menu .dropdown > menu {
+menu .dropdown>menu {
     left: 100%;
     top: 0;
 }
 
-menu .dropdown > button {
+menu .dropdown>button {
     padding: .25rem .8rem;
 }
 
 .dropdown menu:not([open]) {
     display: none;
 }
+
+label:has(>input:is([type="checkbox"], [type="radio"])) {
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: .65rem;
+    cursor: pointer;
+    line-height: 1.1;
+}
+
+input:is([type="checkbox"], [type="radio"]) {
+    display: grid;
+    place-content: center;
+    appearance: none;
+    font: inherit;
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0;
+    background-color: #f6f6f6;
+    border: 0.1em solid #bababa;
+    border-radius: 0.3rem;
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: .6em;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: .2s transform ease-in-out;
+  box-shadow: inset 1em 1em #fff;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:checked {
+    background-color: var(--accent);
+    border-color: transparent;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: .4em;
+    height: .7em;
+    margin-top: -.2em;
+    transform: rotate(45deg);
+    border: solid transparent;
+    border-width: 0 .15em .15em 0;
+    border-radius: 1px;
+}
+
+input[type="checkbox"]:checked::before {
+    border-color: #fff;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--accent);
+    border-color: transparent;
+}
+
+label+label {
+    margin-top: .75rem;
+}
+

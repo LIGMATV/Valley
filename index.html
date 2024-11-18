@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valley.css</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="valley.css" />
 </head>
 
@@ -15,23 +15,23 @@
 
         <nav id="navigation-rail" class="rail">
             <button data-ui="#navigation-rail" class="icon">
-                <i class='bx bx-menu'></i>
+                <iconify-icon icon="fluent:navigation-16-regular"></iconify-icon>
             </button>
-            <div class="margin-top margin-bottom"></div>
+            <div class="margin-top"></div>
             <button class="active">
-                <i class='bx bx-home-alt'></i>
+                <iconify-icon icon="fluent:home-16-regular"></iconify-icon>
                 <span>Home</span>
             </button>
             <button>
-                <i class='bx bx-search'></i>
-                <span>Search</span>
+                <iconify-icon icon="fluent:chevron-circle-down-16-regular"></iconify-icon>
+                <span>Accordion</span>
             </button>
             <button>
-                <i class='bx bx-star'></i>
+                <iconify-icon icon="fluent:star-16-regular"></iconify-icon>
                 <span>Like</span>
             </button>
             <button class="active">
-                <i class='bx bx-chat'></i>
+                <iconify-icon icon="fluent:chat-16-regular"></iconify-icon>
                 <span>Comment</span>
             </button>
         </nav>
@@ -60,7 +60,7 @@
                 <h2>Accordion</h2>
 
                 <details>
-                    <summary class="button">Item 1</summary>
+                    <summary class="button">Item 1<iconify-icon class="right" icon="fluent:chevron-down-16-regular"></iconify-icon></summary>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </details>
             </section>
@@ -76,8 +76,8 @@
                 <div class="margin-bottom"></div>
 
                 <h3>Square Buttons</h3>
-                <button class="square"><i class='bx bx-basketball'></i></button>
-                <button class="square circle"><i class='bx bx-basketball'></i></button>
+                <button class="square"><iconify-icon icon="fluent:sport-basketball-24-regular"></iconify-icon></button>
+                <button class="square circle"><iconify-icon icon="fluent:sport-basketball-24-regular"></iconify-icon></button>
                 <div class="margin-bottom"></div>
 
                 <h3>Full-width Buttons</h3>
@@ -95,9 +95,9 @@
                 </nav>
                 <div class="margin-bottom"></div>
                 <nav class="grouped">
-                    <button class="square"><i class='bx bx-comment-dots'></i></button>
-                    <button class="square"><i class='bx bx-video'></i></button>
-                    <button class="square"><i class='bx bx-phone-call'></i></button>
+                    <button class="square"><iconify-icon icon="fluent:chat-16-regular"></iconify-icon></button>
+                    <button class="square"><iconify-icon icon="fluent:video-16-regular"></iconify-icon></button>
+                    <button class="square"><iconify-icon icon="fluent:call-16-regular"></iconify-icon></button>
                 </nav>
 
             </section>
@@ -120,15 +120,37 @@
 
             <section>
 
+                <h2>Checkboxes</h2>
+
+                <label>
+                    <input type="checkbox" name="checkbox-default" />
+                    Checkbox
+                </label>
+            
+                <label>
+                    <input type="checkbox" name="checkbox-checked" checked />
+                    Checkbox - checked
+                </label>
+
+            </section>
+
+            <section>
+
                 <h2>Dialog</h2>
 
-                <button onclick="document.getElementById('dialog-demo').showModal()">Open <i class='bx bx-window-open'></i></button>
+                <button onclick="document.getElementById('dialog-demo').showModal()">Show dialog</button>
                 <dialog id="dialog-demo">
                     <h3>Save your work?</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <div class="margin-bottom"></div>
+                    <label>
+                        <input type="checkbox" name="checkbox-in-dialog" />
+                        Upload your content to cloud.
+                    </label>
                     <form method="dialog">
-                        <button class="accent"><i class='bx bx-check'></i> Save</button>
-                        <button><i class='bx bx-x'></i> Dont save</button>
+                        <button class="accent">Save</button>
+                        <button>Dont save</button>
+                        <button>Cancel</button>
                     </form>
                 </dialog>
 
@@ -137,29 +159,30 @@
             <section>
                 <h2>Dropdown</h2>
                 <div class="dropdown">
-                    <button class="dropbtn" data-ui="#dropdown-1">Default <i class='bx bx-chevron-down'></i> </button>
+                    <button class="dropbtn" data-ui="#dropdown-1">Default <iconify-icon icon="fluent:chevron-down-16-regular"></iconify-icon> </button>
                     <menu id="dropdown-1">
                         <a href="#">Item 1</a>
                         <a href="#">Item 2</a>
                         <a href="#">Item 3</a>
                     </menu>
                 </div>
+                <div class="margin-bottom"></div>
                 <nav class="grouped">
-                    <button>Type one</button>
+                    <button>Multi level</button>
                     <div class="dropdown">
-                        <button class="last-child" data-ui="#dropdown-2"><i class='bx bx-chevron-down'></i></button>
+                        <button class="last-child" data-ui="#dropdown-2"><iconify-icon icon="fluent:chevron-down-16-regular"></iconify-icon></button>
                         <menu id="dropdown-2">
                             <a href="#">Item 1</a>
                             <a href="#">Item 2</a>
                             <a href="#">Item 3</a>
                             <div class="dropdown">
-                                <button data-ui="#dropdown-3" class="plain">More items <i class='bx bx-chevron-right'></i></button>
+                                <button data-ui="#dropdown-3" class="plain">More items <iconify-icon icon="fluent:chevron-right-16-regular"></iconify-icon></button>
                                 <menu id="dropdown-3">
                                     <a href="#">Item 4</a>
                                     <a href="#">Item 5</a>
                                     <a href="#">Item 6</a>
                                     <div class="dropdown">
-                                        <button data-ui="#dropdown-4" class="plain">More items <i class='bx bx-chevron-right'></i></button>
+                                        <button data-ui="#dropdown-4" class="plain">More items <iconify-icon icon="fluent:chevron-right-16-regular"></iconify-icon></button>
                                         <menu id="dropdown-4">
                                             <a href="#">Item 7</a>
                                             <a href="#">Item 8</a>
@@ -180,44 +203,33 @@
                 <h2>Field</h2>
 
                 <input type="text">
+                <div class="margin-bottom"></div>
+                <textarea id="autoTextarea" rows="1"></textarea>
 
             </section>
 
             <section>
 
                 <h2>Icons</h2>
-                <p>Valley.css has built in support to Boxicons. It have multiple built in effortless customization classes.</p>
-                <h3>Webfont icon</h3>
-                <i class='bx bx-home-alt bx-xs'></i>
-                <i class='bx bx-home-alt bx-sm'></i>
-                <i class='bx bx-home-alt bx-md'></i>
-                <i class='bx bx-home-alt bx-lg'></i>
-                <div class="margin-bottom"></div>
-                <i class='bx bxs-like bx-rotate-90 bx-md'></i>
-                <i class='bx bxs-like bx-rotate-180 bx-md'></i>
-                <i class='bx bxs-like bx-rotate-270 bx-md'></i>
-                <i class='bx bxs-like bx-flip-horizontal bx-md'></i>
-                <i class='bx bxs-like bx-flip-vertical bx-md'></i>
-                <div class="margin-bottom"></div>
-                <i class="bx bx-loader bx-spin bx-md"></i>
-                <i class="bx bxs-bell bx-tada bx-md"></i>
-                <i class="bx bxs-error bx-flashing bx-md"></i>
-                <i class="bx bx-radio-circle bx-burst bx-md"></i>
-                <i class="bx bx-fade-left bxs-left-arrow-circle bx-md"></i>
-                <i class="bx bx-fade-right bxs-right-arrow-circle bx-md"></i>
-                <i class="bx bx-fade-up bxs-up-arrow-circle bx-md"></i>
-                <i class="bx bx-fade-down bxs-down-arrow-circle bx-md"></i>
-                <div class="margin-bottom"></div>
-                <i class="bx bx-loader bx-spin-hover bx-md"></i>
-                <i class="bx bxs-bell bx-tada-hover bx-md"></i>
-                <i class="bx bxs-error bx-flashing-hover bx-md"></i>
-                <i class="bx bx-radio-circle bx-burst-hover bx-md"></i>
-                <i class="bx bx-fade-left-hover bxs-left-arrow-circle bx-md"></i>
-                <i class="bx bx-fade-right-hover bxs-right-arrow-circle bx-md"></i>
-                <i class="bx bx-fade-up-hover bxs-up-arrow-circle bx-md"></i>
-                <i class="bx bx-fade-down-hover bxs-down-arrow-circle bx-md"></i>
+                <p>Valley.css has built in support to Iconify. Not just having Fluent-style icons, you can use many open source icon sets with a large choice of open source icon components. Thousands of high-quality icons from 100+ icon sets, all validated, cleaned up, optimised and always up to date.</p>
 
-                </section>
+            </section>
+
+            <section>
+
+                <h2>Radios</h2>
+
+                <label>
+                    <input type="radio" name="radio">
+                    Radio
+                </label>
+                  
+                  <label>
+                    <input type="radio" name="radio" checked>
+                    Radio - checked
+                </label>
+
+            </section>
 
 
         </article>
@@ -242,6 +254,15 @@
                 }
             });
         });
+    </script>
+    <script>
+const textarea = document.getElementById('autoTextarea');
+
+textarea.addEventListener('input', function() {
+  this.style.height = 'auto'; // Reset height to auto to recalculate
+  this.style.height = (this.scrollHeight) + 'px'; // Set height to match scrollHeight
+});
+
     </script>
 
 </body>
