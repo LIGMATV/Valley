@@ -1,44 +1,48 @@
-        // Toggle open attribute for elements
-document.querySelectorAll('button[data-ui]').forEach(btn => 
-    btn.addEventListener('click', () => {
-        const el = document.querySelector(btn.getAttribute('data-ui'));
-        el?.toggleAttribute('open');
-    })
-);
-
 // Auto-resize textarea
 document.getElementById('autoTextarea')?.addEventListener('input', function () {
     this.style.height = 'auto';
     this.style.height = `${this.scrollHeight}px`;
 });
 
-// Initialize custom dropdown
-function initDropdown(select) {
-    const btn = select.querySelector(".select-button");
-    const value = select.querySelector(".selected-value");
-    const options = select.querySelectorAll(".select-dropdown li input");
+// Update button content based on selected options
+document.querySelectorAll('button[data-select]').forEach(button => {
+    const groupName = button.getAttribute('data-select');
+    const inputs = document.querySelectorAll(`input[name="${groupName}"]`);
+    const list = button.querySelector('ul');
+    const placeholderText = button.getAttribute('placeholder') || 'Select an option';
 
-    btn.addEventListener("click", () => {
-        select.classList.toggle("active");
-        btn.setAttribute("aria-expanded", select.classList.contains("active"));
-    });
+    // Function to update the button content
+    const updateContent = () => {
+        const selectedValues = Array.from(inputs)
+            .filter(input => input.checked)
+            .map(input => input.value);
 
-    options.forEach(opt =>
-        opt.addEventListener("change", () => {
-            const selected = [...options]
-                .filter(o => o.checked)
-                .map(o => `<li>${o.parentElement.textContent.trim()}</li>`)
-                .join("") || "<li>Select car brands</li>";
-            value.innerHTML = selected;
-        })
-    );
+        list.innerHTML = selectedValues.length ?
+            selectedValues.map(value => `<li>${value}</li>`).join('') :
+            `<li>${placeholderText}</li>`;
+    };
 
-    document.addEventListener("click", e => {
-        if (!select.contains(e.target)) {
-            select.classList.remove("active");
-            btn.setAttribute("aria-expanded", "false");
-        }
-    });
-}
+    inputs.forEach(input => input.addEventListener('change', updateContent));
+    updateContent(); // Initialize with current state
+});
 
-document.querySelectorAll(".custom-select").forEach(initDropdown);
+document.addEventListener("DOMContentLoaded", () => {
+    const updateActiveElements = () => {
+        const fragment = window.location.hash; // Mendapatkan fragmen dari URL
+        const elements = document.querySelectorAll("[data-active]");
+
+        elements.forEach(el => {
+            if (el.getAttribute("data-active") === fragment) {
+                el.classList.add("active");
+            } else {
+                el.classList.remove("active");
+            }
+        });
+    };
+
+    // Jalankan saat halaman dimuat
+    updateActiveElements();
+
+    // Jalankan saat fragmen URL berubah
+    window.addEventListener("hashchange", updateActiveElements);
+});

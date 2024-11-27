@@ -571,8 +571,8 @@ button:not(.plain, .rail button),
 .button,
 :is(input[type=text], textarea) {
     display: inline-block;
-    border-radius: .3rem;
-    padding: .25rem .8rem;
+    border-radius: .35rem;
+    padding: .15rem .8rem;
     transition: all 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
     outline: none;
     line-height: inherit;
@@ -622,7 +622,7 @@ button:not(.accent, .plain, .rail button):active,
 
 iconify-icon.right {
     float: right;
-    margin-top: .25em;
+    margin-top: .25rem;
 }
 
 button.square {
@@ -632,7 +632,7 @@ button.square {
 
 button.square iconify-icon {
     font-size: 2.5rem;
-    margin: .35rem -.25rem;
+    margin: .45rem -.22rem;
 }
 
 button.circle {
@@ -644,7 +644,8 @@ button.circle {
     transition: none;
     font: inherit;
     width: 100%;
-    min-height: 2.4rem;
+    line-height: normal;
+    min-height: 2.2rem;
     overflow-y: hidden;
 }
 
@@ -677,7 +678,7 @@ menu {
     position: absolute;
     background-color: var(--bg);
     width: max-content;
-    box-shadow: var(--shadow16);
+    box-shadow: var(--shadow8);
     margin: .2rem 0;
     border-radius: .5rem;
     z-index: 1;
@@ -685,9 +686,14 @@ menu {
     border: 1px solid var(--border-color);
 }
 
+menu ul {
+    margin: 0;
+}
+
 menu li {
     display: block;
-    padding: .25rem .8rem;
+    padding: .35rem .8rem;
+    line-height: normal;
     border-radius: .3rem;
     margin: .25rem;
     text-decoration: none;
@@ -827,15 +833,8 @@ label+label {
     border-radius: 2px
 }
 
-.tooltip-comp-arrow {
-    position: absolute;
-    z-index: 1;
-    width: 16px;
-    height: 16px;
-    overflow: hidden
-}
-
-.tooltip-comp-arrow::before {
+.tooltip-comp-arrow::before,
+.pop-comp-arrow::before {
     content: '';
     position: absolute;
     top: 8px;
@@ -850,67 +849,83 @@ label+label {
     transform: rotate(45deg)
 }
 
-.tooltip-comp-content {
-    position: relative;
-    z-index: 2
-}
-
 .tooltip-comp.hide-arrow-icon .tooltip-comp-arrow {
     display: none
 }
 
-.tooltip-comp.position-bottom .tooltip-comp-arrow {
+.pop-comp-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1
+}
+
+.pop-comp-disable-events {
+    pointer-events: none
+}
+
+.tooltip-comp-arrow,
+.pop-comp-arrow {
+    position: absolute;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    pointer-events: none
+}
+
+.tooltip-comp-content,
+.pop-comp-content {
+    position: relative;
+    z-index: 2
+}
+
+.tooltip-comp.position-bottom .tooltip-comp-arrow,
+.pop-comp-wrapper.position-bottom>.pop-comp-arrow {
     margin-left: -8px;
     left: 0;
     top: -15px
 }
 
-.tooltip-comp.position-top .tooltip-comp-arrow {
+.tooltip-comp.position-top .tooltip-comp-arrow,
+.pop-comp-wrapper.position-top>.pop-comp-arrow {
     margin-left: -8px;
     left: 0;
     bottom: -15px
 }
 
-.tooltip-comp.position-right .tooltip-comp-arrow {
+.tooltip-comp.position-right .tooltip-comp-arrow,
+.pop-comp-wrapper.position-right>.pop-comp-arrow {
     margin-top: -8px;
     top: 0;
     left: -15px
 }
 
-.tooltip-comp.position-left .tooltip-comp-arrow {
+.tooltip-comp.position-left .tooltip-comp-arrow,
+.pop-comp-wrapper.position-left>.pop-comp-arrow {
     margin-top: -8px;
     top: 0;
     right: -15px
 }
 
+.select {
+    min-width: 11.5rem;
+}
 
-.custom-select {
+.select :is(ul, li) {
     display: inline-block;
-}
-
-.custom-select :is(button, menu) {
-    min-width: 13.5rem;
-}
-
-.custom-select:not(.active) .select-dropdown {
-    display: none;
-}
-
-.selected-value {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.selected-value li {
-    display: inline-block;
-}
-
-.selected-value:has(li+li) li::after {
+.select ul:has(li+li) li::after {
     content: ",\00a0";
 }
 
-.selected-value:has(li+li) li:last-child:after {
+.select ul:has(li+li) li:last-child:after {
     content: "";
 }
 

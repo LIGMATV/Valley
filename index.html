@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="valley.css">
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/sa-si-dev/tooltip@master/dist/tooltip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sa-si-dev/popover@main/dist/popover.min.js"></script>
 </head>
 
 <body>
@@ -16,93 +17,93 @@
 
         <nav id="navigation-rail" class="rail">
             <li class="icon no-tooltip" data-tooltip="Open navigation">
-                <button data-ui="#navigation-rail">
+                <button data-ui="#navigation-rail" onclick="document.getElementById('navigation-rail').toggleAttribute('open')">
                     <iconify-icon icon="fluent:navigation-16-regular"></iconify-icon>
                 </button>
             </li>
             <div class="margin-top"></div>
             <section class="scrollable">
                 <ul>
-                    <li class="active" data-tooltip="Home">
-                        <a href="#">
+                    <li class="active" data-tooltip="Home" data-active="#main">
+                        <a href="#main">
                             <iconify-icon icon="fluent:home-16-regular"></iconify-icon>
                             <span>Home</span>
                         </a>
                     </li>
                     <hr>
-                    <li data-tooltip="Accordion">
+                    <li data-tooltip="Accordion" data-active="#accordion">
                         <a href="#accordion">
                             <iconify-icon icon="fluent:chevron-circle-down-16-regular"></iconify-icon>
                             <span>Accordion</span>
                         </a>
                     </li>
-                    <li data-tooltip="Buttons">
+                    <li data-tooltip="Buttons" data-active="#button">
                         <a href="#button">
                             <iconify-icon icon="fluent:cursor-hover-16-regular"></iconify-icon>
                             <span>Buttons</span>
                         </a>
                     </li>
-                    <li data-tooltip="Cards">
+                    <li data-tooltip="Cards" data-active="#card">
                         <a href="#card">
                             <iconify-icon icon="fluent:contact-card-16-regular"></iconify-icon>
                             <span>Cards</span>
                         </a>
                     </li>
-                    <li data-tooltip="Checkboxes">
+                    <li data-tooltip="Checkboxes" data-active="#checkbox">
                         <a href="#checkbox">
                             <iconify-icon icon="fluent:checkbox-checked-16-regular"></iconify-icon>
                             <span>Checkboxes</span>
                         </a>
                     </li>
-                    <li data-tooltip="Dialogs">
+                    <li data-tooltip="Dialogs" data-active="#dialog">
                         <a href="#dialog">
                             <iconify-icon icon="fluent:folder-open-vertical-16-regular"></iconify-icon>
                             <span>Dialogs</span>
                         </a>
                     </li>
-                    <li data-tooltip="Dropdowns">
+                    <li data-tooltip="Dropdowns" data-active="#dropdown">
                         <a href="#dropdown">
                             <iconify-icon icon="fluent:layout-row-four-16-regular"></iconify-icon>
                             <span>Dropdowns</span>
                         </a>
                     </li>
-                    <li data-tooltip="Fields">
+                    <li data-tooltip="Fields" data-active="#field">
                         <a href="#field">
                             <iconify-icon icon="fluent:text-field-16-regular"></iconify-icon>
                             <span>Fields</span>
                         </a>
                     </li>
-                    <li data-tooltip="Grid">
+                    <li data-tooltip="Grid" data-active="#grid">
                         <a href="#grid">
                             <iconify-icon icon="fluent:grid-16-regular"></iconify-icon>
                             <span>Grid</span>
                         </a>
                     </li>
-                    <li data-tooltip="Icons">
+                    <li data-tooltip="Icons" data-active="#icon">
                         <a href="#icon">
                             <iconify-icon icon="fluent:emoji-16-regular"></iconify-icon>
                             <span>Icons</span>
                         </a>
                     </li>
-                    <li data-tooltip="Radios">
+                    <li data-tooltip="Radios" data-active="#radio">
                         <a href="#radio">
                             <iconify-icon icon="fluent:radio-button-16-regular"></iconify-icon>
                             <span>Radios</span>
                         </a>
                     </li>
-                    <li data-tooltip="Select">
+                    <li data-tooltip="Select" data-active="#select">
                         <a href="#select">
                             <iconify-icon icon="fluent:multiselect-16-regular"></iconify-icon>
                             <span>Select</span>
                         </a>
                     </li>
-                    <li data-tooltip="Slider">
+                    <li data-tooltip="Slider" data-active="#slider">
                         <a href="#slider">
                             <iconify-icon icon="fluent:arrow-step-in-right-16-regular"></iconify-icon>
                             <span>Slider</span>
                         </a>
                     </li>
-                    <li data-tooltip="Tooltips">
+                    <li data-tooltip="Tooltips" data-active="#tooltip">
                         <a href="#tooltip">
                             <iconify-icon icon="fluent:slide-text-multiple-16-regular"></iconify-icon>
                             <span>Tooltips</span>
@@ -120,7 +121,7 @@
         </nav>
 
         <article class="main">
-            <header class="main-header">
+            <header class="main-header" id="main">
                 <div class="title">Valley.css <sup>BETA</sup></div>
                 <p class="description">The simplest way to make web page become native.</p>
             </header>
@@ -243,45 +244,46 @@
             <section id="dropdown">
                 <h2>Dropdowns</h2>
                 <div class="dropdown">
-                    <button class="dropbtn" data-ui="#dropdown-1">Default <iconify-icon
-                            icon="fluent:chevron-down-16-regular"></iconify-icon> </button>
+                    <button class="menu" data-popover-target="#dropdown-1">Default <iconify-icon icon="fluent:chevron-down-16-regular"></iconify-icon> </button>
                     <menu id="dropdown-1">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
                     </menu>
                 </div>
                 <div class="margin-bottom"></div>
                 <nav class="grouped">
                     <button>Multi level</button>
                     <div class="dropdown">
-                        <button class="last-child" data-ui="#dropdown-2">
+                        <button class="menu last-child" data-popover-target="#dropdown-2">
                             <iconify-icon icon="fluent:chevron-down-16-regular"></iconify-icon>
                         </button>
                         <menu id="dropdown-2">
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                            <div class="dropdown">
-                                <li><button data-ui="#dropdown-3" class="plain">More items <iconify-icon
-                                            icon="fluent:chevron-right-16-regular"></iconify-icon></button></li>
-                                <menu id="dropdown-3">
-                                    <li>Item 4</li>
-                                    <li>Item 5</li>
-                                    <li>Item 6</li>
-                                    <div class="dropdown">
-                                        <li><button data-ui="#dropdown-4" class="plain">More items <iconify-icon
-                                                    icon="fluent:chevron-right-16-regular"></iconify-icon></button></li>
-                                        <menu id="dropdown-4">
-                                            <li>Item 7</li>
-                                            <li>Item 8</li>
-                                            <li>Item 9</li>
-                                        </menu>
-                                    </div>
-                                </menu>
-                            </div>
-                            <li disabled>Disabled</li>
+                            <ul>
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                                <li class="menu" data-popover-target="#dropdown-3" data-popover-position="right top">More items <iconify-icon icon="fluent:chevron-right-16-regular"></iconify-icon></li>
+                            </ul>
                         </menu>
+                        <menu id="dropdown-3">
+                            <ul>
+                                <li>Item 4</li>
+                                <li>Item 5</li>
+                                <li>Item 6</li>
+                                <li class="menu" data-popover-target="#dropdown-4" data-popover-position="right top">More items <iconify-icon icon="fluent:chevron-right-16-regular"></iconify-icon></li>
+                            </ul>
+                        </menu>
+                        <menu id="dropdown-4">
+                            <ul>
+                                <li>Item 7</li>
+                                <li>Item 8</li>
+                                <li>Item 9</li>
+                            </ul>
+                        </menu>
+                        </div>
                     </div>
                 </nav>
 
@@ -369,64 +371,23 @@
 
                 <h2>Select</h2>
 
-                <div class="custom-select">
-                    <button class="select-button" role="combobox" aria-label="select button" aria-haspopup="listbox" aria-expanded="false" aria-controls="select-dropdown">
-                        <span class="selected-value">Open this select menu</span>
-                        <iconify-icon class="right" icon="fluent:chevron-down-16-regular"></iconify-icon>
-                    </button>
-                    <menu class="select-dropdown" role="listbox" id="select-dropdown">
-                        <li role="option">
-                            <label for="github"><input type="radio" id="github" name="social-account" />GitHub</label>
-                        </li>
-                        <li role="option">
-                            <label for="instagram"><input type="radio" id="instagram" name="social-account" />Instagram</label>
-                        </li>
-                        <li role="option">
-                            <label for="facebook"><input type="radio" id="facebook" name="social-account" />Facebook</label>
-                        </li>
-                        <li role="option">
-                            <label for="linkedIn"><input type="radio" id="linkedIn" name="social-account" />LinkedIn</label>
-                        </li>
-                        <li role="option">
-                            <label for="twitter"><input type="radio" id="twitter" name="social-account" />Twitter</label>
-                        </li>
-                        <li role="option">
-                            <label for="reddit"><input type="radio" id="reddit" name="social-account" />Reddit</label>
-                        </li>
-                    </menu>
-                </div>
+                <button class="menu select" data-popover-target="#select-1" data-select="car" placeholder="Choose a car"><ul></ul><iconify-icon class="right" icon="fluent:chevron-down-16-regular"></iconify-icon> </button>
+                <menu id="select-1">
+                    <ul>
+                        <li><label><input type="radio" name="car" value="Sedan"> Sedan</label></li>
+                        <li><label><input type="radio" name="car" value="SUV"> SUV</label></li>
+                        <li><label><input type="radio" name="car" value="Truck"> Truck</label></li>
+                    </ul>
+                </menu> 
 
-                <div class="custom-select">
-                    <button class="select-button" role="combobox" aria-label="Select car brands" aria-haspopup="listbox" aria-expanded="false" aria-controls="select-dropdown">
-                        <span class="selected-value">
-                            <li>Select car brands</li>
-                        </span>
-                        <iconify-icon class="right" icon="fluent:chevron-down-16-regular"></iconify-icon>
-                    </button>
-                    <menu class="select-dropdown" role="listbox" id="select-dropdown">
-                        <li role="option">
-                            <label for="car-toyota"><input type="checkbox" id="car-toyota"
-                                    name="car-brand" />Toyota</label>
-                        </li>
-                        <li role="option">
-                            <label for="car-honda"><input type="checkbox" id="car-honda"
-                                    name="car-brand" />Honda</label>
-                        </li>
-                        <li role="option">
-                            <label for="car-bmw"><input type="checkbox" id="car-bmw" name="car-brand" />BMW</label>
-                        </li>
-                        <li role="option">
-                            <label for="car-mercedes"><input type="checkbox" id="car-mercedes"
-                                    name="car-brand" />Mercedes</label>
-                        </li>
-                        <li role="option">
-                            <label for="car-audi"><input type="checkbox" id="car-audi" name="car-brand" />Audi</label>
-                        </li>
-                        <li role="option">
-                            <label for="car-ford"><input type="checkbox" id="car-ford" name="car-brand" />Ford</label>
-                        </li>
-                    </menu>
-                </div>
+                <button class="menu select" data-popover-target="#select-2" data-select="fruits" placeholder="Choose some fruits"><ul></ul><iconify-icon class="right" icon="fluent:chevron-down-16-regular"></iconify-icon> </button>
+                <menu id="select-2">
+                    <ul>
+                        <li><label><input type="checkbox" name="fruits" value="Apple"> Apple</label></li>
+                        <li><label><input type="checkbox" name="fruits" value="Banana"> Banana</label></li>
+                        <li><label><input type="checkbox" name="fruits" value="Cherry"> Cherry</label></li>
+                    </ul>
+                </menu> 
 
                 <div class="margin-bottom"></div>
 
@@ -463,6 +424,7 @@
                 <button data-tooltip-allow-html="true" data-tooltip="<h3>Title</h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis et eros vitae mattis. Nunc cursus massa at bibendum auctor. Praesent iaculis pellentesque condimentum. Vestibulum condimentum nisi in arcu ultrices, nec sollicitudin magna sodales. Duis nec lorem in tortor iaculis mattis. Praesent interdum ipsum sed odio egestas hendrerit.">Button with a rich Tooltip.</button>
                 <span data-tooltip-allow-html="true" data-tooltip="<h3>Title</h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis et eros vitae mattis. Nunc cursus massa at bibendum auctor. Praesent iaculis pellentesque condimentum. Vestibulum condimentum nisi in arcu ultrices, nec sollicitudin magna sodales. Duis nec lorem in tortor iaculis mattis. Praesent interdum ipsum sed odio egestas hendrerit.">Span with a rich Tooltip.</span>
 
+                
             </section>
 
 
@@ -471,6 +433,12 @@
 
     </main>
 
+    <script>
+        PopoverComponent.init({
+  ele: '.menu',
+});
+
+    </script>
     <script src="valley.js"></script>
     
 
