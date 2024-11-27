@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valley.css</title>
+    <link rel="stylesheet" href="valley.css">
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
-    <link rel="stylesheet" href="valley.css" />
+    <script src="https://cdn.jsdelivr.net/gh/sa-si-dev/tooltip@master/dist/tooltip.min.js"></script>
 </head>
 
 <body>
@@ -14,117 +15,123 @@
     <main>
 
         <nav id="navigation-rail" class="rail">
-            <li class="icon no-tooltip" aria-label="Open navigation">
+            <li class="icon no-tooltip" data-tooltip="Open navigation">
                 <button data-ui="#navigation-rail">
                     <iconify-icon icon="fluent:navigation-16-regular"></iconify-icon>
                 </button>
             </li>
             <div class="margin-top"></div>
-            <li class="active" aria-label="Home">
-                <a href="#">
-                    <iconify-icon icon="fluent:home-16-regular"></iconify-icon>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li aria-label="Accordion">
-                <a href="#accordion">
-                    <iconify-icon icon="fluent:chevron-circle-down-16-regular"></iconify-icon>
-                    <span>Accordion</span>
-                </a>
-            </li>
-            <li aria-label="Buttons">
-                <a href="#button">
-                    <iconify-icon icon="fluent:cursor-hover-16-regular"></iconify-icon>
-                    <span>Buttons</span>
-                </a>
-            </li>
-            <li aria-label="Cards">
-                <a href="#card">
-                    <iconify-icon icon="fluent:contact-card-16-regular"></iconify-icon>
-                    <span>Cards</span>
-                </a>
-            </li>
-            <li aria-label="Checkboxes">
-                <a href="#checkbox">
-                    <iconify-icon icon="fluent:checkbox-checked-16-regular"></iconify-icon>
-                    <span>Checkboxes</span>
-                </a>
-            </li>
-            <li aria-label="Dialogs">
-                <a href="#dialog">
-                    <iconify-icon icon="fluent:folder-open-vertical-16-regular"></iconify-icon>
-                    <span>Dialogs</span>
-                </a>
-            </li>
-            <li aria-label="Dropdowns">
-                <a href="#dropdown">
-                    <iconify-icon icon="fluent:layout-row-four-16-regular"></iconify-icon>
-                    <span>Dropdowns</span>
-                </a>
-            </li>
-            <li aria-label="Fields">
-                <a href="#field">
-                    <iconify-icon icon="fluent:text-field-16-regular"></iconify-icon>
-                    <span>Fields</span>
-                </a>
-            </li>
-            <li aria-label="Icons">
-                <a href="#icon">
-                    <iconify-icon icon="fluent:emoji-16-regular"></iconify-icon>
-                    <span>Icons</span>
-                </a>
-            </li>
-            <li aria-label="Radios">
-                <a href="#radio">
-                    <iconify-icon icon="fluent:radio-button-16-regular"></iconify-icon>
-                    <span>Radios</span>
-                </a>
-            </li>
-            <li aria-label="Slider">
-                <a href="#slider">
-                    <iconify-icon icon="fluent:arrow-step-in-right-16-regular"></iconify-icon>
-                    <span>Slider</span>
-                </a>
-            </li>
-            <li aria-label="Tooltips">
-                <a href="#tooltip">
-                    <iconify-icon icon="fluent:slide-text-multiple-16-regular"></iconify-icon>
-                    <span>Tooltips</span>
-                </a>
-            </li>
-            <li aria-label="Tooltips">
-                <a href="#tooltip">
-                    <iconify-icon icon="fluent:slide-text-multiple-16-regular"></iconify-icon>
-                    <span>Tooltips</span>
-                </a>
+            <section class="scrollable">
+                <ul>
+                    <li class="active" data-tooltip="Home">
+                        <a href="#">
+                            <iconify-icon icon="fluent:home-16-regular"></iconify-icon>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <hr>
+                    <li data-tooltip="Accordion">
+                        <a href="#accordion">
+                            <iconify-icon icon="fluent:chevron-circle-down-16-regular"></iconify-icon>
+                            <span>Accordion</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Buttons">
+                        <a href="#button">
+                            <iconify-icon icon="fluent:cursor-hover-16-regular"></iconify-icon>
+                            <span>Buttons</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Cards">
+                        <a href="#card">
+                            <iconify-icon icon="fluent:contact-card-16-regular"></iconify-icon>
+                            <span>Cards</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Checkboxes">
+                        <a href="#checkbox">
+                            <iconify-icon icon="fluent:checkbox-checked-16-regular"></iconify-icon>
+                            <span>Checkboxes</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Dialogs">
+                        <a href="#dialog">
+                            <iconify-icon icon="fluent:folder-open-vertical-16-regular"></iconify-icon>
+                            <span>Dialogs</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Dropdowns">
+                        <a href="#dropdown">
+                            <iconify-icon icon="fluent:layout-row-four-16-regular"></iconify-icon>
+                            <span>Dropdowns</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Fields">
+                        <a href="#field">
+                            <iconify-icon icon="fluent:text-field-16-regular"></iconify-icon>
+                            <span>Fields</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Grid">
+                        <a href="#grid">
+                            <iconify-icon icon="fluent:grid-16-regular"></iconify-icon>
+                            <span>Grid</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Icons">
+                        <a href="#icon">
+                            <iconify-icon icon="fluent:emoji-16-regular"></iconify-icon>
+                            <span>Icons</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Radios">
+                        <a href="#radio">
+                            <iconify-icon icon="fluent:radio-button-16-regular"></iconify-icon>
+                            <span>Radios</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Select">
+                        <a href="#select">
+                            <iconify-icon icon="fluent:multiselect-16-regular"></iconify-icon>
+                            <span>Select</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Slider">
+                        <a href="#slider">
+                            <iconify-icon icon="fluent:arrow-step-in-right-16-regular"></iconify-icon>
+                            <span>Slider</span>
+                        </a>
+                    </li>
+                    <li data-tooltip="Tooltips">
+                        <a href="#tooltip">
+                            <iconify-icon icon="fluent:slide-text-multiple-16-regular"></iconify-icon>
+                            <span>Tooltips</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <hr>
+            <li data-tooltip="Dark/Light">
+                <button onclick="document.body.classList.toggle('dark');">
+                    <iconify-icon icon="fluent:dark-theme-20-filled"></iconify-icon>
+                    <span>Dark/Light</span>
+                </button>
             </li>
         </nav>
 
         <article class="main">
             <header class="main-header">
-                <div class="title">Valley.css</div>
+                <div class="title">Valley.css <sup>BETA</sup></div>
                 <p class="description">The simplest way to make web page become native.</p>
             </header>
-
-            <section>
-                <h2>Why using Valley.css?</h2>
-                <ul>
-                    <li>Easy</li>
-                    <li>Free</li>
-                    <li>No more headache</li>
-                    <li>Easy</li>
-                    <li>Free</li>
-                    <li>Easy</li>
-                    <li>Free</li>
-                </ul>
-            </section>
 
             <section id="accordion">
 
                 <h2>Accordion</h2>
 
                 <details>
-                    <summary class="button">Item 1 <iconify-icon class="right" icon="fluent:chevron-down-16-regular"></iconify-icon>
+                    <summary class="button">Item 1 <iconify-icon class="right" icon="fluent:chevron-down-16-regular">
+                        </iconify-icon>
                     </summary>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -143,10 +150,10 @@
                 <div class="margin-bottom"></div>
 
                 <h3>Square Buttons</h3>
-                <button class="square">
+                <button class="square" data-tooltip="fluent:sport-basketball-24-regular">
                     <iconify-icon icon="fluent:sport-basketball-24-regular"></iconify-icon>
                 </button>
-                <button class="square circle">
+                <button class="square circle" data-tooltip="fluent:sport-basketball-24-regular">
                     <iconify-icon icon="fluent:sport-basketball-24-regular"></iconify-icon>
                 </button>
                 <div class="margin-bottom"></div>
@@ -166,13 +173,13 @@
                 </nav>
                 <div class="margin-bottom"></div>
                 <nav class="grouped">
-                    <button class="square">
+                    <button class="square" data-tooltip="Chat">
                         <iconify-icon icon="fluent:chat-16-regular"></iconify-icon>
                     </button>
-                    <button class="square">
+                    <button class="square" data-tooltip="Video call">
                         <iconify-icon icon="fluent:video-16-regular"></iconify-icon>
                     </button>
-                    <button class="square">
+                    <button class="square" data-tooltip="Voice call">
                         <iconify-icon icon="fluent:call-16-regular"></iconify-icon>
                     </button>
                 </nav>
@@ -256,13 +263,15 @@
                             <li>Item 2</li>
                             <li>Item 3</li>
                             <div class="dropdown">
-                                <li><button data-ui="#dropdown-3" class="plain">More items <iconify-icon icon="fluent:chevron-right-16-regular"></iconify-icon></button></li>
+                                <li><button data-ui="#dropdown-3" class="plain">More items <iconify-icon
+                                            icon="fluent:chevron-right-16-regular"></iconify-icon></button></li>
                                 <menu id="dropdown-3">
                                     <li>Item 4</li>
                                     <li>Item 5</li>
                                     <li>Item 6</li>
                                     <div class="dropdown">
-                                        <li><button data-ui="#dropdown-4" class="plain">More items <iconify-icon icon="fluent:chevron-right-16-regular"></iconify-icon></button></li>
+                                        <li><button data-ui="#dropdown-4" class="plain">More items <iconify-icon
+                                                    icon="fluent:chevron-right-16-regular"></iconify-icon></button></li>
                                         <menu id="dropdown-4">
                                             <li>Item 7</li>
                                             <li>Item 8</li>
@@ -288,12 +297,55 @@
 
             </section>
 
+            <section id="grid">
+
+                <h2>Grid</h2>
+
+                <div class="grid">
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s1" data-tooltip="s1">1</div>
+                    <div class="s6" data-tooltip="s6">6</div>
+                    <div class="s6" data-tooltip="s6">6</div>
+                    <div class="s12" data-tooltip="s12">12</div>
+                    <div class="s12 m6 l3" data-tooltip="s12 m6 l3">12/6/3</div>
+                    <div class="s12 m6 l3" data-tooltip="s12 m6 l3">12/6/3</div>
+                    <div class="s12 m6 l3" data-tooltip="s12 m6 l3">12/6/3</div>
+                    <div class="s12 m6 l3" data-tooltip="s12 m6 l3">12/6/3</div>
+                  </div>
+            </section>
+
             <section id="icon">
 
                 <h2>Icons</h2>
                 <p>Valley.css has built in support to Iconify. Not just having Fluent-style icons, you can use many open
                     source icon sets with a large choice of open source icon components. Thousands of high-quality icons
                     from 100+ icon sets, all validated, cleaned up, optimised and always up to date.</p>
+                <p>For example, those animated icons:</p>
+
+                    <h4>Material Line Icons <code>line-md</code></h4>
+                    <div style="font-size: 3rem;">
+                        <iconify-icon icon="line-md:loading-loop" data-tooltip="line-md:loading-loop"></iconify-icon>
+                        <iconify-icon icon="line-md:loading-alt-loop" data-tooltip="line-md:loading-alt-loop"></iconify-icon>
+                        <iconify-icon icon="line-md:loading-twotone-loop" data-tooltip="line-md:loading-twotone-loop"></iconify-icon>
+                        <iconify-icon icon="line-md:uploading-loop" data-tooltip="line-md:uploading-loop"></iconify-icon>
+                    </div>
+
+                    <h4>EOS Icons <code>eos-icons</code></h4>
+                    <div style="font-size: 3rem;">
+                        <iconify-icon icon="eos-icons:loading" data-tooltip="eos-icons:loading"></iconify-icon>
+                        <iconify-icon icon="eos-icons:bubble-loading" data-tooltip="eos-icons:bubble-loading"></iconify-icon>
+                        <iconify-icon icon="eos-icons:three-dots-loading" data-tooltip="eos-icons:three-dots-loading"></iconify-icon>
+                    </div>
 
             </section>
 
@@ -313,11 +365,91 @@
 
             </section>
 
+            <section id="select">
+
+                <h2>Select</h2>
+
+                <div class="custom-select">
+                    <button class="select-button" role="combobox" aria-label="select button" aria-haspopup="listbox" aria-expanded="false" aria-controls="select-dropdown">
+                        <span class="selected-value">Open this select menu</span>
+                        <iconify-icon class="right" icon="fluent:chevron-down-16-regular"></iconify-icon>
+                    </button>
+                    <menu class="select-dropdown" role="listbox" id="select-dropdown">
+                        <li role="option">
+                            <label for="github"><input type="radio" id="github" name="social-account" />GitHub</label>
+                        </li>
+                        <li role="option">
+                            <label for="instagram"><input type="radio" id="instagram" name="social-account" />Instagram</label>
+                        </li>
+                        <li role="option">
+                            <label for="facebook"><input type="radio" id="facebook" name="social-account" />Facebook</label>
+                        </li>
+                        <li role="option">
+                            <label for="linkedIn"><input type="radio" id="linkedIn" name="social-account" />LinkedIn</label>
+                        </li>
+                        <li role="option">
+                            <label for="twitter"><input type="radio" id="twitter" name="social-account" />Twitter</label>
+                        </li>
+                        <li role="option">
+                            <label for="reddit"><input type="radio" id="reddit" name="social-account" />Reddit</label>
+                        </li>
+                    </menu>
+                </div>
+
+                <div class="custom-select">
+                    <button class="select-button" role="combobox" aria-label="Select car brands" aria-haspopup="listbox" aria-expanded="false" aria-controls="select-dropdown">
+                        <span class="selected-value">
+                            <li>Select car brands</li>
+                        </span>
+                        <iconify-icon class="right" icon="fluent:chevron-down-16-regular"></iconify-icon>
+                    </button>
+                    <menu class="select-dropdown" role="listbox" id="select-dropdown">
+                        <li role="option">
+                            <label for="car-toyota"><input type="checkbox" id="car-toyota"
+                                    name="car-brand" />Toyota</label>
+                        </li>
+                        <li role="option">
+                            <label for="car-honda"><input type="checkbox" id="car-honda"
+                                    name="car-brand" />Honda</label>
+                        </li>
+                        <li role="option">
+                            <label for="car-bmw"><input type="checkbox" id="car-bmw" name="car-brand" />BMW</label>
+                        </li>
+                        <li role="option">
+                            <label for="car-mercedes"><input type="checkbox" id="car-mercedes"
+                                    name="car-brand" />Mercedes</label>
+                        </li>
+                        <li role="option">
+                            <label for="car-audi"><input type="checkbox" id="car-audi" name="car-brand" />Audi</label>
+                        </li>
+                        <li role="option">
+                            <label for="car-ford"><input type="checkbox" id="car-ford" name="car-brand" />Ford</label>
+                        </li>
+                    </menu>
+                </div>
+
+                <div class="margin-bottom"></div>
+
+                <select class="button">
+                    <option hidden>Open this select menu</option>
+                    <option>GitHub</option>
+                    <option>Instagram</option>
+                    <option>Facebook</option>
+                    <option>LinkedIn</option>
+                    <option>Twitter</option>
+                    <option>Reddit</option>
+                </select>
+
+
+
+
+            </section>
+
             <section id="slider">
 
                 <h2>Slider</h2>
 
-                  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
 
             </section>
 
@@ -325,8 +457,11 @@
 
                 <h2>Tooltips</h2>
 
-                <button aria-label="Simple Tooltip">Button with a simple Tooltip.</button>
-                <span aria-label="Simple Tooltip">Span with a simple Tooltip.</span>
+                <button data-tooltip="Simple Tooltip">Button with a simple Tooltip.</button>
+                <span data-tooltip="Simple Tooltip">Span with a simple Tooltip.</span>
+                <div class="margin-bottom"></div>
+                <button data-tooltip-allow-html="true" data-tooltip="<h3>Title</h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis et eros vitae mattis. Nunc cursus massa at bibendum auctor. Praesent iaculis pellentesque condimentum. Vestibulum condimentum nisi in arcu ultrices, nec sollicitudin magna sodales. Duis nec lorem in tortor iaculis mattis. Praesent interdum ipsum sed odio egestas hendrerit.">Button with a rich Tooltip.</button>
+                <span data-tooltip-allow-html="true" data-tooltip="<h3>Title</h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis et eros vitae mattis. Nunc cursus massa at bibendum auctor. Praesent iaculis pellentesque condimentum. Vestibulum condimentum nisi in arcu ultrices, nec sollicitudin magna sodales. Duis nec lorem in tortor iaculis mattis. Praesent interdum ipsum sed odio egestas hendrerit.">Span with a rich Tooltip.</span>
 
             </section>
 
@@ -336,32 +471,8 @@
 
     </main>
 
-    <script>
-        const buttons = document.querySelectorAll('button[data-ui]');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', function () {
-                const targetSelector = button.getAttribute('data-ui');
-                const targetElement = document.querySelector(targetSelector);
-
-                if (targetElement) {
-                    if (targetElement.hasAttribute('open')) {
-                        targetElement.removeAttribute('open');
-                    } else {
-                        targetElement.setAttribute('open', '');
-                    }
-                }
-            });
-        });
-    </script>
-    <script>
-        const textarea = document.getElementById('autoTextarea');
-
-        textarea.addEventListener('input', function () {
-            this.style.height = 'auto'; // Reset height to auto to recalculate
-            this.style.height = (this.scrollHeight) + 'px'; // Set height to match scrollHeight
-        });
-    </script>
+    <script src="valley.js"></script>
+    
 
 </body>
 
